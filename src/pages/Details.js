@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import { Container, Row, Col, Card, ListGroup, Alert, Button } from 'react-bootstrap';
 import {WhatsappIcon} from '../Components/WhatsappIcon/WhatsappIcon';
 import './Details.css';
+import  {ContactUsBtn} from '../Components/ContactUsBtn/ContactUsBtn';
 
 export class Details extends Component {
 
@@ -86,7 +87,7 @@ export class Details extends Component {
                 </Row>
                 <Row>
                   <Col className='text-center' lg={12}>
-                    <Button>Cont&aacute;ctanos</Button>
+                    <ContactUsBtn />
                   </Col>
                 </Row>
               </Container>
