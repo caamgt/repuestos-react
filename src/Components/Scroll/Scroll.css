@@ -1,0 +1,16 @@
+.divScroll-cafe {
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.divScroll-cafe::-webkit-scrollbar {
+    width: 15px;
+    background: rgba(29, 158, 216, 0.2);
+    border-radius: 10px;
+}
+
+.divScroll-cafe::-webkit-scrollbar-thumb {
+    width: 15px;
+    background: rgba(29, 158, 216, 0.7);
+    border-radius: 10px;
+}

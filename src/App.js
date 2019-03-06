@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import { Home } from './pages/Home';
+import {Details} from './pages/Details';
+import { NotFound } from './pages/NotFound';
+import { MainNavbar } from './Components/Navbar/MainNavbar';
+import {ComoLlegar} from './Components/ComoLlegar/ComoLlegar';
 
 class App extends Component {
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+      return (
+        <div>
+          <MainNavbar />
+          <Switch>
+          <Route path='/' component={Home} exact />
+          <Route path='/details/:id' component={Details} />
+          <Route path='/comollegar' component={ComoLlegar} />
+          <Route component={NotFound} />
+          <Home />
+        </Switch>
+        </div>
+      );
+    }
 }
 
 export default App;

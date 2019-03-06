@@ -1,0 +1,10 @@
+.alinar-derecha {
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    float: right;
+}
+
+.facebookIcon-color {
+    color: #4267b2;
+}
