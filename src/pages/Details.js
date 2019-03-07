@@ -4,7 +4,6 @@ import * as firebase from 'firebase/app';
 import { PropTypes } from 'prop-types';
 import {Link} from 'react-router-dom';
 import { Container, Row, Col, Card, ListGroup, Alert, Button } from 'react-bootstrap';
-import {WhatsappIcon} from '../Components/WhatsappIcon/WhatsappIcon';
 import './Details.css';
 import  {ContactUsBtn} from '../Components/ContactUsBtn/ContactUsBtn';
 
@@ -52,9 +51,7 @@ export class Details extends Component {
                         <img src={img} alt="" />
                         </figure>
                     </Card>
-                    <Link to={'/'}>
-                        <Button variant="primary">Regresar</Button>
-                    </Link>
+                    
                   </Col>
                   <Col lg={6}>
                     <Card border="light">
@@ -79,14 +76,13 @@ export class Details extends Component {
                     <Alert variant="success">
                       <Alert.Heading>Más información</Alert.Heading>
                       <p>
-                        Para más informsción, puede escribirnos al
-                        Whatsapp <WhatsappIcon />
+                        Para más informsción, escr&iacute;benos al
+                        Whatsapp.
                       </p>
                     </Alert>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className='text-center' lg={12}>
+                    <Link to={'/'} className='pr-2'>
+                        <Button variant="primary">Regresar</Button>
+                    </Link>
                     <ContactUsBtn />
                   </Col>
                 </Row>

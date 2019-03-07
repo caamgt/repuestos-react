@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase/app';
 import '../config/config';
 import { Container, Row, Col } from 'react-bootstrap';
-import { SearchForm } from '../Components/SearchForm/SearcForm';
+import {SearchForm} from '../Components/SearchForm/SearcForm.jsx';
 import { CardList } from '../Components/CardList/CardList';
 import { CargandoIcono } from '../Components/CargandoIcono/CargandoIcono';
 import { ContactUs } from '../Components/ContactUs/ContactUs';

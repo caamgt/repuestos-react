@@ -28,7 +28,7 @@ export class MainNavbar extends Component {
                     <Nav className="justify-content-end">
                         <Link to={'/'} className='nav-link'>Inicio</Link>
                         <Link to={'/comollegar'} className='nav-link'>Como llegar</Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <Link to={'/acercade'} className='nav-link'>Acerca de</Link>
                     </Nav>
                     
                 </Navbar>
