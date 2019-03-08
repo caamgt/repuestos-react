@@ -14,7 +14,8 @@ export class Home extends Component {
         this.state = {
           repuestos: [],
           searchfield: '',
-          repuesto: []
+          repuesto: [],
+          checkField: []
         }
       }
 
@@ -30,14 +31,24 @@ export class Home extends Component {
     }
 
     _onSearchChange = (event) => {
-    this.setState({searchfield: event.target.value});
+        return this.setState({searchfield: event.target.value});
+    }
+
+    _onCheckBox = (e) => {
+        if (e.target.checked) {
+            return this.setState({searchfield: e.target.value});
+        } else {
+            return this.setState({searchfield: ''});
+        }
+        
+        
     }
 
     render() {
-        const filterRepuestos = this.state.repuestos.filter(robot => {
-            return robot.descripcion.toLowerCase().includes(this.state.searchfield.toLowerCase());
+        const filterRepuestos = this.state.repuestos.filter(repuesto => {
+            return repuesto.descripcion.toLowerCase().includes(this.state.searchfield.toLowerCase()) || repuesto.marca.toLowerCase().includes(this.state.searchfield.toLowerCase());
         })
-        
+
         if (this.state.repuestos.length === 0) {
             return(<CargandoIcono />);
         } else {
@@ -53,7 +64,7 @@ export class Home extends Component {
                             <Col style={{paddingTop: '20px'}} lg={3} md={3}>
                                 <Row>
                                     <Col lg={12}>
-                                        <SearchForm searchChange={this._onSearchChange }/>
+                                        <SearchForm searchChange={this._onSearchChange } onCheckBox={this._onCheckBox}/>
                                     </Col>
                                     <Col lg={12} style={{paddingTop: '20px'}}>
                                         <ContactUs />
@@ -61,9 +72,7 @@ export class Home extends Component {
                                 </Row>
                             </Col>
                             <Col lg={9} md={9}>
-                               
                                 <CardList repuestos={filterRepuestos} />
-                                
                             </Col>
                         </Row>
                     </Container>
