@@ -12,10 +12,6 @@ export class SearchForm extends Component {
                 <Form.Group controlId="formBasicEmail">
                     <SearchBox searchChange={searchChange}/>
                 </Form.Group>
-                <Form.Group controlId="formBasicChecbox">
-                    <Form.Check type="checkbox" onClick={onCheckBox} label="Volvo" value='volvo'/>
-                    <Form.Check type="checkbox" onClick={onCheckBox} label="Porsche" value='porsche'/>
-                </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>Marca</Form.Label>
                     <SearchMarca searchChange={searchChange}/>

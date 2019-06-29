@@ -34,16 +34,6 @@ export class Home extends Component {
         return this.setState({searchfield: event.target.value});
     }
 
-    _onCheckBox = (e) => {
-        if (e.target.checked) {
-            return this.setState({searchfield: e.target.value});
-        } else {
-            return this.setState({searchfield: ''});
-        }
-        
-        
-    }
-
     render() {
         const filterRepuestos = this.state.repuestos.filter(repuesto => {
             return repuesto.descripcion.toLowerCase().includes(this.state.searchfield.toLowerCase()) || repuesto.marca.toLowerCase().includes(this.state.searchfield.toLowerCase());
@@ -64,7 +54,7 @@ export class Home extends Component {
                             <Col style={{paddingTop: '20px'}} lg={3} md={3}>
                                 <Row>
                                     <Col lg={12}>
-                                        <SearchForm searchChange={this._onSearchChange } onCheckBox={this._onCheckBox}/>
+                                        <SearchForm searchChange={this._onSearchChange }/>
                                     </Col>
                                     <Col lg={12} style={{paddingTop: '20px'}}>
                                         <ContactUs />
